@@ -21,15 +21,23 @@ public class Employee {
     @Column
     private String phoneNumber;
 
+    @Column
+    private String country;
+
+    @Column
+    private String department;
+
     public Employee(){
 
     }
 
-    public Employee(String name, String surname, String email, String phoneNumber){
+    public Employee(String name, String surname, String email, String phoneNumber, String country, String department){
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.country = country;
+        this.department = department;
     }
 
     public Long getId() {
@@ -72,14 +80,32 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", lastName='" + surname + '\'' +
+                ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", country='" + country + '\'' +
+                ", department='" + department + '\'' +
                 '}';
     }
 }
